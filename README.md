@@ -20,6 +20,7 @@ https://github.com/tsconfig/bases
 - Postgres: Utilizado para armazenar qualquer tipo de dado estruturado;
 
 - Redis: Utilizado para armazenar dados cache. Disponibiliza os dados de maneira mais rápida. Redis não é um banco para salvar dados estruturados.
+- É um banco de dados de chave-valor.
 
 ### Extensões VSCode
 - Rest Client: Extensão no VSCode que permite a criação de arquivos com a extensão `.http` para execução de rotas http dentro do próprio VSCode.
