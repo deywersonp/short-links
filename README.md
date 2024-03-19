@@ -9,6 +9,8 @@ https://github.com/tsconfig/bases
 
 - Imagens do `bitnami`: As imagens do bitnami são prontas para uso em produção. Já vem com algumas questões de segurança habilitadas, como por exemplo a obrigatoriedade de iniciar o banco Redis com a utilização de senha.
 
+- Zod: Ferramenta utilizada para validar dados, assegurando que uma informação esteja no formato que esperamos.
+
 ### Comandos Docker
 - `docker compose up -d` 
 - `docker compose down` 
