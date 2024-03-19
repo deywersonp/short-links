@@ -5,12 +5,34 @@ import postgres from "postgres";
 
 const app = fastify();
 
+app.get("/:code", async (request, reply) => {
+  const getLinkSchema = z.object({
+    code: z.string().min(3),
+  });
+
+  const { code } = getLinkSchema.parse(request.params);
+
+  const result = await sql/*sql*/`
+    SELECT id, original_url
+    FROM short_links
+    WHERE short_links.code = ${code}
+  `;
+
+  const link = result[0];
+
+  if (result.length === 0) {
+    return reply.status(400).send({ message: "Link not found." });
+  }
+
+  return reply.redirect(301, link.original_url);
+});
+
 app.get("/api/links", async () => {
   const result = await sql/*sql*/`
-  SELECT *
-  FROM short_links
-  ORDER BY created_at DESC
-`;
+    SELECT *
+    FROM short_links
+    ORDER BY created_at DESC
+  `;
 
   return result;
 });
